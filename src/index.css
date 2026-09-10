@@ -1,1 +1,29 @@
 @import "tailwindcss";
+
+/* FitTrack primary theme: red */
+@theme {
+  --color-emerald-50: #fef2f2;
+  --color-emerald-100: #fee2e2;
+  --color-emerald-200: #fecaca;
+  --color-emerald-300: #fca5a5;
+  --color-emerald-400: #f87171;
+  --color-emerald-500: #ef4444;
+  --color-emerald-600: #dc2626;
+  --color-emerald-700: #b91c1c;
+  --color-emerald-800: #991b1b;
+  --color-emerald-900: #7f1d1d;
+  --color-emerald-950: #450a0a;
+
+  /* Map existing teal accents to the same red palette for a consistent theme. */
+  --color-teal-50: #fef2f2;
+  --color-teal-100: #fee2e2;
+  --color-teal-200: #fecaca;
+  --color-teal-300: #fca5a5;
+  --color-teal-400: #f87171;
+  --color-teal-500: #ef4444;
+  --color-teal-600: #dc2626;
+  --color-teal-700: #b91c1c;
+  --color-teal-800: #991b1b;
+  --color-teal-900: #7f1d1d;
+  --color-teal-950: #450a0a;
+}
