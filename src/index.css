@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* FitTrack primary theme: red */
+/* FitTrack editorial red theme */
 @theme {
   --color-emerald-50: #fef2f2;
   --color-emerald-100: #fee2e2;
@@ -13,8 +13,6 @@
   --color-emerald-800: #991b1b;
   --color-emerald-900: #7f1d1d;
   --color-emerald-950: #450a0a;
-
-  /* Map existing teal accents to the same red palette for a consistent theme. */
   --color-teal-50: #fef2f2;
   --color-teal-100: #fee2e2;
   --color-teal-200: #fecaca;
@@ -26,4 +24,89 @@
   --color-teal-800: #991b1b;
   --color-teal-900: #7f1d1d;
   --color-teal-950: #450a0a;
+}
+
+:root {
+  --editorial-paper: #f4f1ea;
+  --editorial-paper-deep: #ebe6dc;
+  --editorial-ink: #171513;
+  --editorial-muted: #706a61;
+  --editorial-rule: #c9c2b7;
+  --editorial-accent: #b42318;
+}
+
+html { background: var(--editorial-paper); }
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(255,255,255,.8), transparent 32rem),
+    var(--editorial-paper);
+  color: var(--editorial-ink);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  letter-spacing: -0.01em;
+}
+
+/* Magazine-style hierarchy: serif display headlines, restrained UI typography. */
+h1, h2, h3, h4 {
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--editorial-ink);
+  letter-spacing: -0.035em;
+}
+
+h1 { line-height: .98; }
+h2 { line-height: 1.02; }
+h3, h4 { line-height: 1.08; }
+
+/* Turn the existing rounded SaaS surfaces into crisp editorial panels. */
+.rounded-2xl { border-radius: .55rem !important; }
+.rounded-xl { border-radius: .4rem !important; }
+.rounded-lg { border-radius: .3rem !important; }
+
+.bg-slate-50 { background-color: var(--editorial-paper) !important; }
+.bg-white { background-color: #fbfaf7 !important; }
+.text-slate-900 { color: var(--editorial-ink) !important; }
+.text-slate-800 { color: #25221f !important; }
+.text-slate-700 { color: #39352f !important; }
+.text-slate-600 { color: #514b43 !important; }
+.text-slate-500 { color: var(--editorial-muted) !important; }
+.text-slate-400 { color: #918a80 !important; }
+.border-slate-200, .border-slate-200\/80, .border-slate-200\/90 { border-color: var(--editorial-rule) !important; }
+.border-slate-100 { border-color: #ddd7cc !important; }
+
+.shadow-sm, .shadow-md, .shadow-lg, .shadow-xl {
+  box-shadow: none !important;
+}
+
+/* Editorial rules and quieter navigation. */
+header, aside, nav {
+  background: rgba(251,250,247,.94) !important;
+  backdrop-filter: blur(12px);
+}
+
+button { letter-spacing: .005em; }
+
+/* Make primary actions feel like print accents rather than glossy app controls. */
+.bg-emerald-600 { background-color: var(--editorial-accent) !important; }
+.hover\\:bg-emerald-700:hover { background-color: #8f1d14 !important; }
+.text-emerald-600 { color: var(--editorial-accent) !important; }
+.text-emerald-700 { color: #8f1d14 !important; }
+.text-emerald-800 { color: #721811 !important; }
+
+/* Fine grain gives the paper a subtle magazine texture without affecting readability. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: .035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+  z-index: 9999;
+}
+
+::selection { background: #fecaca; color: #450a0a; }
+
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; }
+  body { letter-spacing: -0.005em; }
 }
